@@ -94,33 +94,33 @@ function draw() {
 }
 
 function drawLogo() {
-  image(logo,  width / 2, height / 3, 400, 400);
+  image(logo,  width/2, height/2, 400, 400);
 }
 
 function drawStartButton() {
   fill(200);
   noStroke();
-  rect(width / 2, height / 3 + 250, 200, 50, 15);
+  rect(width / 2, height / 2 + 250, 200, 50, 15);
   fill(0);
   textFont('Basic Sans');
   textSize(32);
-  text("Start", width / 2, height / 3 +250);
+  text("Start", width / 2, height / 2 +250);
 }
 
 
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height *0.4, 200, 200);
-  image(katImg2, width * 0.4, height *0.4, 200, 200);
-  image(katImg3, width * 0.6, height *0.4, 200, 200);
-  image(katImg4, width * 0.8, height *0.4, 200, 200);
+  image(katImg1, width * 0.2, height *0.4, 150, 150);
+  image(katImg2, width * 0.4, height *0.4, 150, 150);
+  image(katImg3, width * 0.6, height *0.4, 150, 150);
+  image(katImg4, width * 0.8, height *0.4, 150, 150);
 
   fill(180);
-  rect(width * 0.2, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.4, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.6, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.8, height *0.4 + 130, 200, 40, 15);
+  rect(width * 0.2, height *0.4 + 130, 150, 40, 15);
+  rect(width * 0.4, height *0.4 + 130, 150, 40, 15);
+  rect(width * 0.6, height *0.4 + 130, 150, 40, 15);
+  rect(width * 0.8, height *0.4 + 130, 150, 40, 15);
 
   fill(0);
   textSize(20);
@@ -254,7 +254,7 @@ function drawResult() {
 }
 
 function mousePressed() {
-  if (state === "start" && isInside(width / 2, height / 3 +250, 240, 80)) {
+  if (state === "start" && isInside(width / 2, height / 2 +250, 240, 80)) {
     state = "topics";
 
 
@@ -264,7 +264,7 @@ function mousePressed() {
     let y = height * 0.4 + 130;
 
     for (let i = 0; i < topics.length; i++) {
-      if (isInside(xPositions[i], y, 200, 40)) {
+      if (isInside(xPositions[i], y, 150, 40)) {
         currentTopic = topics[i];
         prepareQuestions(currentTopic);
         state = "quiz";
