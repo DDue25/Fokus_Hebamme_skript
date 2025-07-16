@@ -68,7 +68,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1280, 800);
+  createCanvas(1080, 700);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   imageMode(CENTER);
