@@ -79,9 +79,6 @@ function setup() {
 
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  }
 
 function draw() {
   background("#14303f");
