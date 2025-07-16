@@ -76,7 +76,12 @@ function setup() {
 
   let fs = fullscreen();
     if (!fs) fullscreen(true);
+
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  }
 
 function draw() {
   background("#14303f");
