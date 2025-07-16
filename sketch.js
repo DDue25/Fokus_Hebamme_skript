@@ -73,6 +73,9 @@ function setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textWrap(WORD);
+
+  let fs = fullscreen();
+    if (!fs) fullscreen(true);
 }
 
 function draw() {
@@ -321,7 +324,24 @@ function isInside(cx, cy, w, h) {
   return mouseX > cx - w / 2 && mouseX < cx + w / 2 && mouseY > cy - h / 2 && mouseY < cy + h / 2;
 }
 
-function keyPressed(){
+
+
+/*function keyPressed(){
   let fs = fullscreen();
     fullscreen(!fs);
+}*/
+
+let lastTouchTime = 0;
+
+function touchStarted() {
+  if (!fullscreen()) {
+    fullscreen(true);  // Wenn z. B. über Homescreen geöffnet wurde
+  }
+
+  if (millis() - lastTouchTime > 400) {  // "Debounce" – verhindert Doppeltouch
+    lastTouchTime = millis();
+    mousePressed(); // leite an Mausfunktion weiter
+  }
+
+  return false; // Verhindert Scrollen
 }
