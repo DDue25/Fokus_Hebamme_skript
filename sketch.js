@@ -68,7 +68,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(1280, 720);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   imageMode(CENTER);
@@ -76,9 +76,7 @@ function setup() {
 
   let fs = fullscreen();
     if (!fs) fullscreen(true);
-
 }
-
 
 function draw() {
   background("#14303f");
