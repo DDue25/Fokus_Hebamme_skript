@@ -68,7 +68,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1024, 768);
+  createCanvas(1280, 720);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   imageMode(CENTER);
@@ -326,10 +326,10 @@ function isInside(cx, cy, w, h) {
 
 
 
-/*function keyPressed(){
+function keyPressed(){
   let fs = fullscreen();
     fullscreen(!fs);
-}*/
+}
 
 let lastTouchTime = 0;
 
