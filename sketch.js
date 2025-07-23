@@ -117,16 +117,16 @@ function drawStartButton() {
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height *0.5, 200, 200);
-  image(katImg2, width * 0.4, height *0.5, 200, 200);
-  image(katImg3, width * 0.6, height *0.5, 200, 200);
-  image(katImg4, width * 0.8, height *0.5, 200, 200);
+  image(katImg1, width * 0.2, height *0.5, 180, 180);
+  image(katImg2, width * 0.4, height *0.5, 180, 180);
+  image(katImg3, width * 0.6, height *0.5, 180, 180);
+  image(katImg4, width * 0.8, height *0.5, 180, 180);
 
   fill(180);
-  rect(width * 0.2, height *0.5 + 130, 200, 40, 15);
-  rect(width * 0.4, height *0.5 + 130, 200, 40, 15);
-  rect(width * 0.6, height *0.5 + 130, 200, 40, 15);
-  rect(width * 0.8, height *0.5 + 130, 200, 40, 15);
+  rect(width * 0.2, height *0.5 + 130, 180, 40, 15);
+  rect(width * 0.4, height *0.5 + 130, 180, 40, 15);
+  rect(width * 0.6, height *0.5 + 130, 180, 40, 15);
+  rect(width * 0.8, height *0.5 + 130, 180, 40, 15);
 
   fill(0);
   textSize(20);
@@ -149,19 +149,19 @@ function drawQuestion() {
   noStroke();
   fill(255);
   textSize(40);
-  text(q.q, width/2, questionBoxY, width * 0.8 - 40, questionBoxH - 40);
+  text(q.q, width/2, questionBoxY, width * 0.6 - 40, questionBoxH - 40);
 
   // Antwortfelder – Nummerierung links oben (1), rechts oben (2), links unten (3), rechts unten (4)
   let positions = [
     // x, y
     [width * 0.3, height * 0.5], // 1 : links oben
     [width * 0.7, height * 0.5], // 2 : rechts oben
-    [width * 0.3, height * 0.7], //3 : links unten
-    [width * 0.7, height * 0.7] //4 : rechts unten
+    [width * 0.3, height * 0.8], //3 : links unten
+    [width * 0.7, height * 0.8] //4 : rechts unten
   ];
 
-  let boxWidth = width * 0.35;
-  let boxHeight = 100;
+  let boxWidth = width * 0.37;
+  let boxHeight = 150;
   textSize(30);
 
   for (let i = 0; i < 4; i++) {
