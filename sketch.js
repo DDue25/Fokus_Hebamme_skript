@@ -217,10 +217,10 @@ function drawResult() {
 
   // Zurück-Button
   fill(180);
-  rect(width / 2, height - 200, 200, 50, 15);
+  rect(width / 2, height - 250, 200, 50, 15);
   fill(0);
   textSize(24);
-  text("Zurück zum Start", width / 2, height - 200);
+  text("Zurück zum Start", width / 2, height - 250);
 }
 
 function mousePressed() {
