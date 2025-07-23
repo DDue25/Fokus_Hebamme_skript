@@ -117,16 +117,16 @@ function drawStartButton() {
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height *0.4, 200, 200);
-  image(katImg2, width * 0.4, height *0.4, 200, 200);
-  image(katImg3, width * 0.6, height *0.4, 200, 200);
-  image(katImg4, width * 0.8, height *0.4, 200, 200);
+  image(katImg1, width * 0.2, height *0.4, 250, 250);
+  image(katImg2, width * 0.4, height *0.4, 250, 250);
+  image(katImg3, width * 0.6, height *0.4, 250, 250);
+  image(katImg4, width * 0.8, height *0.4, 250, 250);
 
   fill(180);
-  rect(width * 0.2, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.4, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.6, height *0.4 + 130, 200, 40, 15);
-  rect(width * 0.8, height *0.4 + 130, 200, 40, 15);
+  rect(width * 0.2, height *0.4 + 130, 250, 40, 15);
+  rect(width * 0.4, height *0.4 + 130, 250, 40, 15);
+  rect(width * 0.6, height *0.4 + 130, 250, 40, 15);
+  rect(width * 0.8, height *0.4 + 130, 250, 40, 15);
 
   fill(0);
   textSize(20);
@@ -136,42 +136,6 @@ function drawTopicButtons() {
   text(topics[3], width * 0.8, height *0.4 + 130);
 }
 
-
-/*function drawQuestion() {
-  let q = currentQuestions[questionIndex];
-
-  // Frage
-  fill(180);
-  rect(2*width/4, height/4, width*3/4,250,15);
-  fill(0);
-  textSize(28);
-  text(q.q, width / 2, 180, width - 80, 140);
-  
-
-  // Antwortfelder (2 links, 2 rechts)
-  let positions = [
-    [width / 4, height*2/3],
-    [width / 4, 360],
-    [3 * width / 4, height*2/3],
-    [3 * width / 4, 360]
-  ];
-
-
-  let boxWidth = width / 2.5;
-  let boxHeight = 100;
-  textSize(22);
-
-  for (let i = 0; i < 4; i++) {
-  // Hintergrundfarbe
-  fill(answerColors[i]);
-  rect(positions[i][0], positions[i][1], boxWidth, boxHeight, 15);
-
-  // Text zentriert zeichnen
-  fill(0);
-  textAlign(CENTER, CENTER);
-  text((i + 1) + ": " + q.a[i], positions[i][0], positions[i][1], boxWidth - 20, boxHeight - 20);
-}
-}*/
 
 function drawQuestion() {
   let q = currentQuestions[questionIndex];
@@ -270,7 +234,7 @@ function mousePressed() {
     let y = height * 0.4 + 130;
 
     for (let i = 0; i < topics.length; i++) {
-      if (isInside(xPositions[i], y, 200, 40)) {
+      if (isInside(xPositions[i], y, 250, 40)) {
         currentTopic = topics[i];
         prepareQuestions(currentTopic);
         state = "quiz";
@@ -287,7 +251,7 @@ function mousePressed() {
     ];
   
     for (let i = 0; i < 4; i++) {
-      if (isInside(positions[i][0], positions[i][1], 420, 80)) {
+      if (isInside(positions[i][0], positions[i][1], 600, 100)) {
         // Nur eine Auswahl pro Frage erlauben
         if (selectedAnswers.length === questionIndex) {
           selectedAnswers.push(i);
