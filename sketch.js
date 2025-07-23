@@ -117,16 +117,16 @@ function drawStartButton() {
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height *0.3, 220, 220);
-  image(katImg2, width * 0.4, height *0.3, 220, 220);
-  image(katImg3, width * 0.6, height *0.3, 220, 220);
-  image(katImg4, width * 0.8, height *0.3, 220, 220);
+  image(katImg1, width * 0.2, height *0.5, 200, 200);
+  image(katImg2, width * 0.4, height *0.5, 200, 200);
+  image(katImg3, width * 0.6, height *0.3, 200, 200);
+  image(katImg4, width * 0.8, height *0.3, 200, 200);
 
   fill(180);
-  rect(width * 0.2, height *0.3 + 130, 220, 40, 15);
-  rect(width * 0.4, height *0.3 + 130, 220, 40, 15);
-  rect(width * 0.6, height *0.3 + 130, 220, 40, 15);
-  rect(width * 0.8, height *0.3 + 130, 220, 40, 15);
+  rect(width * 0.2, height *0.3 + 130, 200, 40, 15);
+  rect(width * 0.4, height *0.3 + 130, 200, 40, 15);
+  rect(width * 0.6, height *0.3 + 130, 200, 40, 15);
+  rect(width * 0.8, height *0.3 + 130, 200, 40, 15);
 
   fill(0);
   textSize(20);
