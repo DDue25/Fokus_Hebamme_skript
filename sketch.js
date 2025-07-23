@@ -11,15 +11,17 @@ let answerColors = ["#e52356", "#54d14e", "#62c4ef", "#ffce00"];
 
 
 let allQuestions = {
-  "Zyklus": [
-    { q: "Was ist der Menstruationszyklus?", a: ["Eine Reinigung", "Eine Krankheit", "Ein natürlicher Ablauf im Körper", "Ein Zufall"], correct: 2 },
+"Zyklus": [
+    { q: "Was ist der Menstruationszyklus?", a: ["Eine Fahrradtour", "Eine Krankheit nur von Frauen", "Die Zeit zwischen zwei Perioden", "Ein besonderes Fitnessprogramm"], correct: 2 },
+    { q: "Was ist eine Periode?", a: ["Ein monatlicher Zeitraum", "Das monatliche Abstoßen der Gebärmutterschleimhaut", "Ein jüdisches Waschungsritual", "Ein besonderes Fitnessprogramm"], correct: 1 },
     { q: "Wie viele Abschnitte hat der Menstruationszyklus?", a: ["zwei", "drei", "vier", "fünf"], correct: 2 },
-    { q: "Wie lange dauert der Zyklus meistens?", a: ["7 Tage", "21 Tage", "28 Tage", "35 Tage"], correct: 2 },
+    { q: "Wie lange dauert der Zyklus im Durchschnitt?", a: ["7 Tage", "21 Tage", "28 Tage", "35 Tage"], correct: 2 },
     { q: "Wann passiert der Eisprung in enem Zyklus?", a: ["Ganz am Anfang", "In der Mitte", "Ganz am Ende", "Gar nicht"], correct: 1 },
-    { q: "Was ist PMS?", a: ["Beschwerden vor der Periode", "Eine Herzkrankheit", "Eine schlimme Migräne", "Ein anderer Name für Bauchschmerzen"], correct: 0 },
-    { q: "Was ist Endometriose?", a: ["Eine dauerhafte Frauenkrankheit", "Ein starkes Medikament", "Eine Tampon-Marke", "Das Ende der Pubertät"], correct: 0 },
+    { q: "Was ist PMS?", a: ["Stimmungsschwankungen und Traurigkeit vor der Periode", "Eine Herzkrankheit nur bei Frauen", "Eine schlimme Migräne", "Ein anderer Name für Gebärmutterkrämpfe"], correct: 0 },
+        { q: "Was ist PMS?", a: ["Stimmungsschwankungen und Traurigkeit vor der Periode", "Periode mit Stimmung", "Pizza mit Salami", "Ein anderer Name für Gebärmutterkrämpfe"], correct: 0 },
+    { q: "Was ist Endometriose?", a: ["Eine geerbte Frauenkrankheit", "Ein starkes Medikament", "Eine Tampon-Marke", "Das Ende der Pubertät"], correct: 0 },
     { q: "Welches ist kein Zeichen für Endometriose?", a: ["Übelkeit", "Starke Periodenschmerzen", "Rückenschmerzen", "Schüttelfrost"], correct: 3 },
-    { q: "Was passiert bei Endometriose?", a: ["Normale Regelschmerzen", "Blutungen außerhalb der Gebärmutter", "Krebs", "Die Menopause beginnt"], correct: 1 },
+    { q: "Was passiert bei Endometriose?", a: ["Der Periodenzeitraum verschiebt sich", "Blutungen außerhalb der Gebärmutter", "", "Die Menopause beginnt"], correct: 1 },
     { q: "Was bedeutet Menopause?", a: ["Pause von der Periode", "Ende der Periode", "Midlife-Crisis", "Zeit vor der Pubertät"], correct: 1 },
     { q: "Was passiert bei der Menopause nicht?", a: ["Hitzewellen", "Laune verändert sich", "Keine Babys mehr bekommen", "Gar nichts"], correct: 3 }
   ],
@@ -27,7 +29,11 @@ let allQuestions = {
     { q: "Was ist das Wochenbett?", a: ["Ein Möbelstück", "Ein anderer Name für Elternzeit", "Die Erholungszeit nach der Geburt", "Ein Notfallbett"], correct: 2 },
     { q: "Wie lange dauert das Wochenbett meistens?", a: ["1 Woche", "2-3 Wochen", "6-8 Wochen", "16 Wochen"], correct: 2 },
     { q: "Was macht eine Frau im Wochenbett nicht?", a: ["Sich ausruhen", "Heilen und schlafen", "Sport machen", "Stillen"], correct: 2 },
-    { q: "Wer hilft im Wochenbett?", a: ["Polizei", "Freunde", "Hebamme", "Hausarzt"], correct: 2 }
+    { q: "Was passiert mit dem Bauch nach der Geburt?", a: ["Er bleibt gleichgroß, aber weich", "Er ist wieder flach", "Er schwillt etwas an", "Die Muskeln ziehen ihn zurück"], correct: 0 },
+    { q: "Wie fühlt sich eine Frau im Wochenbett oft?", a: ["Voller neuer Energie", "Krank", "Abgekämpft und manchmal traurig", "Meistens wieder fit"], correct: 2 },
+    { q: "Was ist ein Wochenfluss?", a: ["Eine Blutung nach der Geburt", "Das wöchentliche Babybaden", "Ein Wasserverlust durch Schwitzen", "Ein anderes Wort für Stillen"], correct: 0 },
+    { q: "Was versteht man unter Rückbildung?", a: ["Eine spezielle Massage", "Die Gebärmutter schrumpft zurück", "Der Heimweg vom Krankenhaus", "Rückentraining für Schwangere"], correct: 1 },
+    { q: "Was ist ein Babyblues?", a: ["Ein Genre an Wiegenliedern", "Eine bekannte Windelmarke", "Eine Kategorie im Jazz für Kinder", "Depressionen nach der Geburt"], correct: 3 }
   ],
   "Schwangerschaft": [
     { q: "Wie lange ist eine Frau schwanger?", a: ["3 Monate", "6 Monate", "9 Monate", "12 Monate"], correct: 2 },
@@ -37,18 +43,18 @@ let allQuestions = {
     { q: "Was verändert sich bei einer schwangeren Frau?", a: ["Sie ist schneller müde", "Sie sieht schlechter", "Sie ist ungeduldiger", "Sie mag keinen Essig"], correct: 0 },
     { q: "Was verändert sich bei einer Schwangeren?", a: ["Haare wachsen mehr", "Hormone ändern sich", "Weniger Geschmack", "Kein Alkohol erlaubt"], correct: 1 },
     { q: "Was passiert mit der Blase in der Schwangerschaft?", a: ["Man riecht besser", "Man isst für zwei", "Man bekommt Flecken", "Man muss oft aufs Klo"], correct: 3 },
-    { q: "Was passiert mit der Gebärmutter beim Babywachsen?", a: ["Atmen", "Spielen", "Rauchen", "Lesen"], correct: 2 },
+    { q: "Was passiert mit der Gebärmutter in der Schwangerschaft?", a: ["Sie dehnt sich aus", "Sie wächst an", "Sie verfärbt sich", "Sie beeinflusst die Stimmung"], correct: 0 },
     { q: "Wie groß ist die Gebärmutter normalerweise?", a: ["So groß wie ein Daumen", "So groß wie eine umgedrehte Birne", "So groß wie ein Hühnerei", "So groß wie eine Honigmelone"], correct: 1 },
     { q: "Wofür ist die Plazenta da?", a: ["um Platz zu schaffen für das Baby", "um das Baby zu verankern", "Um das Baby zu versorgen", "Damit das Baby atmen kann"], correct: 2 }
   ],
   "Hebamme": [
     { q: "Was ist eine Hebamme?", a: ["Ein Werkzeug", "Wie ein Frauenarzt", "Hilft bei der Geburt", "Ein Gerät"], correct: 2 },
-    { q: "Was macht eine Hebamme zu Hause?", a: ["Kochen", "Fernsehen", "Hilft Schwangeren", "Musik spielen"], correct: 2 },
+    { q: "Was macht eine Hebamme beim Hausbesuch?", a: ["Kochen und Aufräumen", "Babysitten", "Hilft Schwangeren und Müttern", "Richtet Babyzimmer ein"], correct: 2 },
     { q: "Zahlt die Krankenkasse für eine Hebamme?", a: ["Ja", "Nein", "Nur manchmal", "Nur im Krankenhaus"], correct: 0 },
-    { q: "Wo arbeitet eine Hebamme im Krankenhaus?", a: ["Im Zoo", "Im Krankenhaus", "Im Kino", "Im Park"], correct: 1 },
-    { q: "Wer darf Hebamme werden?", a: ["Alle mit Hebammen-Studium", "Ärzte", "Pfleger", "Nur Frauen"], correct: 0 },
+    { q: "Wo arbeitet eine Hebamme?", a: ["In Schulen und Kindergärten", "Im Krankenhaus oder Geburtshaus", "In einer Frauenarztpraxis", "In der Kinderkrippe"], correct: 1 },
+    { q: "Wer darf Hebamme werden?", a: ["Alle mit Hebammen-Studium", "Nur Ärzte oder Pfleger", "Nur Mütter", "Nur Frauen über 40"], correct: 0 },
     { q: "Können Männer Hebamme werden?", a: ["Ja, sie heißen auch Hebamme", "Nein, nur wer Kinder kriegen kann", "Ja, dann heißen sie Entbindungspfleger", "Nur mit Sonderregeln"], correct: 0 },
-    { q: "Wie wird man Hebamme?", a: ["Mit einer Ausbildung", "Mit einem Studium", "Mit Medizin-Studium", "Mit Fortbildung"], correct: 1 },
+    { q: "Wie wird man Hebamme?", a: ["Mit einer Ausbildung", "Mit einem Hebammenstudium", "Mit einem Medizin-Studium", "Mit einer Fortbildung"], correct: 1 },
     { q: "Was darf man in der Schwangerschaft nicht?", a: ["Atmen", "Spielen", "Rauchen", "Lesen"], correct: 2 }
   ]
 };
