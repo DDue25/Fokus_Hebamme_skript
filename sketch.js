@@ -117,23 +117,23 @@ function drawStartButton() {
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height /4, 200, 200);
-  image(katImg2, width * 0.4, height *0.4, 200, 200);
-  image(katImg3, width * 0.6, height *0.4, 200, 200);
-  image(katImg4, width * 0.8, height *0.4, 200, 200);
+  image(katImg1, width * 0.2, height *0.5, 200, 200);
+  image(katImg2, width * 0.4, height *0.5, 200, 200);
+  image(katImg3, width * 0.6, height *0.5, 200, 200);
+  image(katImg4, width * 0.8, height *0.5, 200, 200);
 
   fill(180);
-  rect(width * 0.2, height *0.3 + 130, 200, 40, 15);
-  rect(width * 0.4, height *0.3 + 130, 200, 40, 15);
-  rect(width * 0.6, height *0.3 + 130, 200, 40, 15);
-  rect(width * 0.8, height *0.3 + 130, 200, 40, 15);
+  rect(width * 0.2, height *0.5 + 130, 200, 40, 15);
+  rect(width * 0.4, height *0.5 + 130, 200, 40, 15);
+  rect(width * 0.6, height *0.5 + 130, 200, 40, 15);
+  rect(width * 0.8, height *0.5 + 130, 200, 40, 15);
 
   fill(0);
   textSize(20);
-  text(topics[0], width * 0.2, height *0.3 + 130);
-  text(topics[1], width * 0.4, height *0.3 + 130);
-  text(topics[2], width * 0.6, height *0.3 + 130);
-  text(topics[3], width * 0.8, height *0.3 + 130);
+  text(topics[0], width * 0.2, height *0.5 + 130);
+  text(topics[1], width * 0.4, height *0.5 + 130);
+  text(topics[2], width * 0.6, height *0.5 + 130);
+  text(topics[3], width * 0.8, height *0.5 + 130);
 }
 
 
@@ -231,7 +231,7 @@ function mousePressed() {
   } else if (state === "topics") {
     let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
     let xPositions = [width * 0.2, width * 0.4, width * 0.6, width * 0.8];
-    let y = height * 0.3 + 130;
+    let y = height * 0.5 + 130;
 
     for (let i = 0; i < topics.length; i++) {
       if (isInside(xPositions[i], y, 220, 40)) {
