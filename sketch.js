@@ -117,16 +117,16 @@ function drawStartButton() {
 function drawTopicButtons() {
   let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
   
-  image(katImg1, width * 0.2, height *0.4, 150, 150);
-  image(katImg2, width * 0.4, height *0.4, 150, 150);
-  image(katImg3, width * 0.6, height *0.4, 150, 150);
-  image(katImg4, width * 0.8, height *0.4, 150, 150);
+  image(katImg1, width * 0.2, height *0.4, 200, 200);
+  image(katImg2, width * 0.4, height *0.4, 200, 200);
+  image(katImg3, width * 0.6, height *0.4, 200, 200);
+  image(katImg4, width * 0.8, height *0.4, 200, 200);
 
   fill(180);
-  rect(width * 0.2, height *0.4 + 130, 150, 40, 15);
-  rect(width * 0.4, height *0.4 + 130, 150, 40, 15);
-  rect(width * 0.6, height *0.4 + 130, 150, 40, 15);
-  rect(width * 0.8, height *0.4 + 130, 150, 40, 15);
+  rect(width * 0.2, height *0.4 + 130, 200, 40, 15);
+  rect(width * 0.4, height *0.4 + 130, 200, 40, 15);
+  rect(width * 0.6, height *0.4 + 130, 200, 40, 15);
+  rect(width * 0.8, height *0.4 + 130, 200, 40, 15);
 
   fill(0);
   textSize(20);
@@ -270,7 +270,7 @@ function mousePressed() {
     let y = height * 0.4 + 130;
 
     for (let i = 0; i < topics.length; i++) {
-      if (isInside(xPositions[i], y, 150, 40)) {
+      if (isInside(xPositions[i], y, 200, 40)) {
         currentTopic = topics[i];
         prepareQuestions(currentTopic);
         state = "quiz";
@@ -280,10 +280,10 @@ function mousePressed() {
 
   } else if (state === "quiz") {
     let positions = [
-      [width / 4, height*2/3],
-      [3 * width / 4, height*2/3],
-      [width / 4, 360],
-      [3 * width / 4, 360]
+      [width*0.3, height*0.5],
+      [width*0.7, height*0.5],
+      [width *0.3, height*0.7],
+      [width*0.7, height*0.7]
     ];
   
     for (let i = 0; i < 4; i++) {
