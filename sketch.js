@@ -18,10 +18,10 @@ let allQuestions = {
     { q: "Wie lange dauert der Zyklus im Durchschnitt?", a: ["7 Tage", "21 Tage", "28 Tage", "35 Tage"], correct: 2 },
     { q: "Wann passiert der Eisprung in enem Zyklus?", a: ["Ganz am Anfang", "In der Mitte", "Ganz am Ende", "Gar nicht"], correct: 1 },
     { q: "Was ist PMS?", a: ["Stimmungsschwankungen und Traurigkeit vor der Periode", "Eine Herzkrankheit nur bei Frauen", "Eine schlimme Migräne", "Ein anderer Name für Gebärmutterkrämpfe"], correct: 0 },
-        { q: "Was ist PMS?", a: ["Stimmungsschwankungen und Traurigkeit vor der Periode", "Periode mit Stimmung", "Pizza mit Salami", "Ein anderer Name für Gebärmutterkrämpfe"], correct: 0 },
+    { q: "Was ist PMS?", a: ["Stimmungsschwankungen und Traurigkeit vor der Periode", "Periode mit Stimmung", "Pizza mit Salami", "Ein anderer Name für Gebärmutterkrämpfe"], correct: 0 },
     { q: "Was ist Endometriose?", a: ["Eine geerbte Frauenkrankheit", "Ein starkes Medikament", "Eine Tampon-Marke", "Das Ende der Pubertät"], correct: 0 },
     { q: "Welches ist kein Zeichen für Endometriose?", a: ["Übelkeit", "Starke Periodenschmerzen", "Rückenschmerzen", "Schüttelfrost"], correct: 3 },
-    { q: "Was passiert bei Endometriose?", a: ["Der Periodenzeitraum verschiebt sich", "Blutungen außerhalb der Gebärmutter", "", "Die Menopause beginnt"], correct: 1 },
+    { q: "Was passiert bei Endometriose?", a: ["Der Periodenzeitraum verschiebt sich", "Blutungen außerhalb der Gebärmutter", "Der Zyklus bleibt aus", "Die Menopause beginnt"], correct: 1 },
     { q: "Was bedeutet Menopause?", a: ["Pause von der Periode", "Ende der Periode", "Midlife-Crisis", "Zeit vor der Pubertät"], correct: 1 },
     { q: "Was passiert bei der Menopause nicht?", a: ["Hitzewellen", "Laune verändert sich", "Keine Babys mehr bekommen", "Gar nichts"], correct: 3 }
   ],
@@ -137,7 +137,7 @@ function drawTopicButtons() {
 }
 
 
-function drawQuestion() {
+/*function drawQuestion() {
   let q = currentQuestions[questionIndex];
 
   // Frage-Rechteck mit mehr Abstand
@@ -188,7 +188,69 @@ function drawQuestion() {
          boxWidth - 20,
          boxHeight - 20);
   }
+}*/
+
+
+function drawQuestion() {
+  let q = currentQuestions[questionIndex];
+
+  // Fragekasten
+  stroke(84, 208, 78);
+  noFill();
+  let questionBoxY = height * 0.2;
+  let questionBoxH = 200;
+  rect(width / 2, questionBoxY, width * 0.8, questionBoxH, 15);
+
+  // Fragetext
+  noStroke();
+  fill(255);
+  textSize(40);
+  textAlign(CENTER, CENTER);
+  text(q.q, width / 2, questionBoxY, width * 0.6 - 40, questionBoxH - 40);
+
+  // Neue Positionen – weiter unten
+  let topY = height * 0.45;
+  let gapY = 180;
+  let leftX = width * 0.3;
+  let rightX = width * 0.7;
+
+  let positions = [
+    [leftX, topY],
+    [rightX, topY],
+    [leftX, topY + gapY],
+    [rightX, topY + gapY]
+  ];
+
+  let boxWidth = width * 0.39;
+  let boxHeight = 150;
+  textSize(30);
+
+  for (let i = 0; i < 4; i++) {
+    fill(answerColors[i]);
+    rect(positions[i][0], positions[i][1], boxWidth, boxHeight, 15);
+
+    // Nummer oben links
+    fill(255);
+    textSize(48);
+    textAlign(LEFT, TOP);
+    let numX = positions[i][0] - boxWidth / 2 + 10;
+    let numY = positions[i][1] - boxHeight / 2 + 10;
+    text((i + 1), numX, numY);
+
+    // Antworttext
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(26);
+    text(
+      q.a[i],
+      positions[i][0],
+      positions[i][1],
+      boxWidth - 20,
+      boxHeight - 20
+    );
+  }
 }
+
 
 
 
@@ -224,7 +286,7 @@ function drawResult() {
   text("Zurück zum Start", width / 2, height - 150);
 }
 
-function mousePressed() {
+/*function mousePressed() {
   if (state === "start" && isInside(width / 2, height / 2 +250, 240, 80)) {
     state = "topics";
 
@@ -276,7 +338,62 @@ function mousePressed() {
     selectedAnswers = [];
     showNextButton = false;
   }
+}*/
+
+function mousePressed() {
+  if (state === "start" && isInside(width / 2, height / 2 + 250, 240, 80)) {
+    state = "topics";
+
+  } else if (state === "topics") {
+    let topics = ["Zyklus", "Wochenbett", "Schwangerschaft", "Hebamme"];
+    let xPositions = [width * 0.2, width * 0.4, width * 0.6, width * 0.8];
+    let y = height * 0.5 + 130;
+
+    for (let i = 0; i < topics.length; i++) {
+      if (isInside(xPositions[i], y, 220, 40)) {
+        currentTopic = topics[i];
+        prepareQuestions(currentTopic);
+        state = "quiz";
+      }
+    }
+
+  } else if (state === "quiz") {
+    // Angepasste Antwort-Positionen wie in drawQuestion()
+    let topY = height * 0.45;
+    let gapY = 180;
+    let leftX = width * 0.3;
+    let rightX = width * 0.7;
+
+    let positions = [
+      [leftX, topY],
+      [rightX, topY],
+      [leftX, topY + gapY],
+      [rightX, topY + gapY]
+    ];
+
+    let boxWidth = width * 0.39;
+    let boxHeight = 150;
+
+    for (let i = 0; i < 4; i++) {
+      if (isInside(positions[i][0], positions[i][1], boxWidth, boxHeight)) {
+        if (selectedAnswers.length === questionIndex) {
+          selectedAnswers.push(i);
+          questionIndex++;
+          if (questionIndex >= 4) {
+            state = "result";
+          }
+        }
+      }
+    }
+
+  } else if (state === "result" && isInside(width / 2, height - 150, 200, 50, 15)) {
+    state = "start";
+    questionIndex = 0;
+    selectedAnswers = [];
+    showNextButton = false;
+  }
 }
+
 
 // Richtig platzierte prepareQuestions Funktion:
 function prepareQuestions(topic) {
