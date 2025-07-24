@@ -209,7 +209,7 @@ function drawQuestion() {
   text(q.q, width / 2, questionBoxY, width * 0.6 - 40, questionBoxH - 40);
 
   // Neue Positionen – weiter unten
-  let topY = height * 0.55;
+  let topY = height * 0.5;
   let gapY = 180;
   let leftX = width * 0.3;
   let rightX = width * 0.7;
@@ -272,7 +272,7 @@ function drawResult() {
     fill(c);
     let x = startX + i * (boxWidth + spacing);
     rect(x, 300, boxWidth, boxHeight, 20);
-    fill(0);
+    fill(255);
     textSize(28);
     textAlign(CENTER, CENTER);
     text((correctIndex + 1), x, 300);
@@ -359,7 +359,7 @@ function mousePressed() {
 
   } else if (state === "quiz") {
     // Angepasste Antwort-Positionen wie in drawQuestion()
-    let topY = height * 0.55;
+    let topY = height * 0.5;
     let gapY = 180;
     let leftX = width * 0.3;
     let rightX = width * 0.7;
