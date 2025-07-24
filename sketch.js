@@ -146,6 +146,7 @@ function drawQuestion() {
   let questionBoxY = height * 0.2; // etwas weiter oben
   let questionBoxH = 200;          // kompakter Höhe
   rect(width/2, questionBoxY, width * 0.8, questionBoxH, 15);
+
   noStroke();
   fill(255);
   textSize(40);
@@ -160,7 +161,7 @@ function drawQuestion() {
     [width * 0.7, height * 0.8] //4 : rechts unten
   ];
 
-  let boxWidth = width * 0.37;
+  let boxWidth = width * 0.39;
   let boxHeight = 150;
   textSize(30);
 
@@ -246,8 +247,8 @@ function mousePressed() {
     let positions = [
       [width*0.3, height*0.5],
       [width*0.7, height*0.5],
-      [width *0.3, height*0.7],
-      [width*0.7, height*0.7]
+      [width *0.3, height*0.8],
+      [width*0.7, height*0.8]
     ];
   
     for (let i = 0; i < 4; i++) {
