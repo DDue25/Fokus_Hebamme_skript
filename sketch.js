@@ -220,7 +220,7 @@ function drawResult() {
   rect(width / 2, height - 250, 200, 50, 15);
   fill(0);
   textSize(24);
-  text("Zurück zum Start", width / 2, height - 250);
+  text("Zurück zum Start", width / 2, height - 150);
 }
 
 function mousePressed() {
@@ -269,7 +269,7 @@ function mousePressed() {
   }
 
   }
-}else if (state === "result" && isInside(width / 2, height - 200, 200, 50, 15)) {
+}else if (state === "result" && isInside(width / 2, height - 150, 200, 50, 15)) {
     state = "start";
     questionIndex = 0;
     selectedAnswers = [];
