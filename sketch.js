@@ -209,7 +209,7 @@ function drawQuestion() {
   text(q.q, width / 2, questionBoxY, width * 0.6 - 40, questionBoxH - 40);
 
   // Neue Positionen – weiter unten
-  let topY = height * 0.45;
+  let topY = height * 0.45 +100;
   let gapY = 180;
   let leftX = width * 0.3;
   let rightX = width * 0.7;
