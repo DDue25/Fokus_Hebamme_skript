@@ -359,7 +359,7 @@ function mousePressed() {
 
   } else if (state === "quiz") {
     // Angepasste Antwort-Positionen wie in drawQuestion()
-    let topY = height * 0.45 +200;
+    let topY = height * 0.6;
     let gapY = 180;
     let leftX = width * 0.3;
     let rightX = width * 0.7;
