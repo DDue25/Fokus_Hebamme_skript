@@ -273,7 +273,7 @@ function drawResult() {
     let x = startX + i * (boxWidth + spacing);
     rect(x, 300, boxWidth, boxHeight, 20);
     fill(255);
-    textSize(28);
+    textSize(40);
     textAlign(CENTER, CENTER);
     text((correctIndex + 1), x, 300);
   }
